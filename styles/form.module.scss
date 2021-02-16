@@ -1,0 +1,12 @@
+@import "./variables.scss";
+
+.textarea {
+  width: 100%;
+  border: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  &::placeholder {
+    color: $green;
+    line-height: 40px;
+  }
+}

@@ -1,0 +1,53 @@
+@import "./variables.scss";
+
+.comments {
+  background-color: $lightGray3;
+  margin: -10px;
+  .summary {
+    background-color: #fff;
+    border-bottom: 1px solid $lightGray2;
+    display: flex;
+    justify-content: space-between;
+    & > * {
+      flex: 1;
+      padding: 15px 20px;
+    }
+
+    .total {
+      text-align: right;
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    .comment {
+      display: flex;
+
+      & > * {
+        flex: 1;
+        flex-grow: 0;
+        padding: 10px;
+      }
+
+      & > *:last-child {
+        flex-basis: content;
+        flex-grow: 1;
+      }
+    }
+  }
+}
+
+.newCommentBox {
+  padding: 10px 30px;
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid $lightGray2;
+    &::placeholder {
+      color: $gray;
+    }
+  }
+}

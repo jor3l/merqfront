@@ -1,0 +1,20 @@
+@import "./variables.scss";
+
+.button {
+  border: 0;
+  color: #fff;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+  background: $green;
+}
+
+.gap {
+  margin-right: 20px;
+}
+
+.invisible {
+  background: transparent;
+  color: $green;
+  padding: 10px 0;
+}

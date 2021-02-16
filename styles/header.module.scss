@@ -1,0 +1,131 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+
+  .menu {
+    clear: both;
+    transition: max-height 0.2s ease-out;
+    @media (max-width: 48em) {
+      & {
+        clear: none;
+        max-height: none;
+        display: none;
+        position: fixed;
+        top: 58px;
+        left: 0;
+        right: 0;
+        background: #fafafa;
+      }
+    }
+  }
+
+  .menu_btn {
+    display: none;
+    &:checked ~ .menu {
+      display: block;
+    }
+
+    &:checked ~ .menu_icon {
+      .navicon {
+        background: transparent;
+        &:before {
+          transform: rotate(-45deg);
+        }
+        &:after {
+          transform: rotate(45deg);
+        }
+      }
+
+      &:not(.steps) .navicon:before,
+      &:not(.steps) .navicon:after {
+        top: 0;
+      }
+    }
+  }
+
+  .menu_icon {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+
+    .navicon {
+      background: #333;
+      display: block;
+      height: 2px;
+      position: relative;
+      transition: background 0.2s ease-out;
+      width: 18px;
+      &:before,
+      &:after {
+        background: #333;
+        content: "";
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all 0.2s ease-out;
+        width: 100%;
+      }
+
+      &:before {
+        top: 5px;
+      }
+
+      &:after {
+        top: -5px;
+      }
+    }
+
+    @media (min-width: 48em) {
+      & {
+        display: none;
+      }
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #fff;
+    li {
+      a {
+        display: block;
+        padding: 20px 20px;
+        border-right: 1px solid #f4f4f4;
+        text-decoration: none;
+        &:hover {
+          background-color: #f4f4f4;
+        }
+        @media (min-width: 48em) {
+          & {
+            padding: 20px 30px;
+          }
+        }
+      }
+      @media (min-width: 48em) {
+        & {
+          float: left;
+        }
+      }
+    }
+  }
+
+  .logo {
+    display: block;
+    float: left;
+    font-size: 1rem;
+    padding: 20px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+  }
+}
